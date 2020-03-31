@@ -1,3 +1,4 @@
+
 (ns learn-clojure.core
   (:gen-class))
 
@@ -5,3 +6,7 @@
   "I don't do a whole lot ... yet."
   [& args]
   (println "Hello, World!"))
+
+(defn square [x] (* x x))
+
+(square 3)
