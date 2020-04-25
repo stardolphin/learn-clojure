@@ -1,4 +1,4 @@
-(ns learning_clojure.ludicrous
+(ns learn_clojure.ludicrous
   (:require [clojure.test :refer :all])
   (:import (java.util UUID)))
 
