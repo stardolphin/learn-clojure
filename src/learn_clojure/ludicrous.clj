@@ -24,7 +24,7 @@
       update-in containers [(:id selected-container) :contents]
       conj bin)))
 
-(def containers (let [id (uuid)] {:size 1000 :contents [] :id id}))
+(def containers (let [ id (uuid)] {id {:size 1000 :contents [] :id id}})) 
 
 (def bin {:size 23 :id (uuid)})
 
