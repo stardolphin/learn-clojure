@@ -20,7 +20,6 @@
 (defn generate-containers [n size] (into {} (for _ (range n))))
 
 
-
 (defn pack-bin [containers bin]
   (let [selected-container (select-container containers bin)]
     (when selected-container
@@ -37,6 +36,8 @@
 
 (select-container containers bin)
 
+
+;; https://www.udemy.com/course/learning-clojure/learn/lecture/4771618#overview
 
 
 ;; (pack-bin containers bin)
