@@ -41,7 +41,7 @@
 
 ;; (pack-bin containers bin)
 
-
+;; https://www.youtube.com/watch?v=Ngt29DyNDRM @ 25 minutes - ludicrous
 ;; the partial takes a partially set up function, bin already, so only
 ;; the 'container' argument varies. Put the variant argument last!
 ;; Clojure REPL and TDD Feedback at the speed of light: 16:00 in.
