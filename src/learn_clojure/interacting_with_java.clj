@@ -7,8 +7,18 @@
 
 (println long millis)
 
+;;
 (Date. (System/currentTimeMillis))
 
+;;
+(. (Date.) getTime)
 
+;;
+(doto (Calendar/getInstance)
+  (.set Calendar/YEAR 1985)
+  (.set Calendar/MONTH 05)
+  (.set Calendar/DATE 04))
 
+;;
+(int-array 10)
 
