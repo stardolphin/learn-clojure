@@ -17,6 +17,8 @@
 (defn select-container [containers bin]
   (first (filter (partial container-with-space bin) (vals containers))))
 
+(defn generate-containers [n size] (into {} (for _ (range n))))
+
 
 (defn pack-bin [containers bin]
   (let [selected-container (select-container containers bin)]
@@ -24,7 +26,9 @@
       update-in containers [(:id selected-container) :contents]
       conj bin)))
 
-(def containers (let [ id (uuid)] {id {:size 1000 :contents [] :id id}})) 
+(defn pack-bins [containers bin] reduce pack-bin containers bin )
+
+(def containers (let [ id (uuid)] {id {:size 1000 :contents [] :id id}}))
 
 (def bin {:size 23 :id (uuid)})
 
@@ -32,9 +36,13 @@
 
 (select-container containers bin)
 
+
+;; https://www.udemy.com/course/learning-clojure/learn/lecture/4771618#overview
+
+
 ;; (pack-bin containers bin)
 
-
+;; https://www.youtube.com/watch?v=Ngt29DyNDRM @ 25 minutes - ludicrous
 ;; the partial takes a partially set up function, bin already, so only
 ;; the 'container' argument varies. Put the variant argument last!
 ;; Clojure REPL and TDD Feedback at the speed of light: 16:00 in.
