@@ -1,4 +1,5 @@
 (ns learn-clojure.interacting-with-java
+  (:require [clojure.string :as str])
   (:import [java.util Date Calendar]))
 
 (def date (str (Date. (System/currentTimeMillis))))
@@ -22,3 +23,7 @@
 ;;
 (int-array 10)
 
+;; try ^<space> to expand commands
+(str/capitalize "FoO fOf")
+
+;;
