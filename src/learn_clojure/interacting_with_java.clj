@@ -29,3 +29,6 @@
 (str/capitalize "FoO fOf")
 
 ;;
+(def my-array (into-array String ["Doctor" "my" "eyes"]))
+(aget my-array 0)
+
