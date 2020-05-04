@@ -4,6 +4,8 @@
 
 (def date (str (Date. (System/currentTimeMillis))))
 
+(println date)
+
 (def millis (System/currentTimeMillis))
 
 (println long millis)
