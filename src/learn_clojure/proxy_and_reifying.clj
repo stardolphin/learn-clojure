@@ -13,5 +13,13 @@
 (def my-runnable (proxy [Runnable] [] (run [] (println "Running on empty, in a runnable"))))
 (.submit my-pool my-runnable)
 
+;;
+(def my-reify (reify Comparable (compareTo [this other] -1)
+                Runnable (run [this] (println "I'm in a runnable, yeah!"))))
+
+(.submit my-pool my-reify)
+
+
+
 
 
