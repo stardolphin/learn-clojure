@@ -46,8 +46,5 @@
 
 ;; delay never triggers until...
 (defn my-function-with-delay [] (delay (slow-log "Delayed Message")) :ok)
-
 (my-function-with-delay)
-
-
 
