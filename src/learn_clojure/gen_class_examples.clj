@@ -5,12 +5,12 @@
            :methods [[getName [] String]]
            :constructors {[String] []}
            :state state
-           :init init
-           )
+           :init init)
 
 (defn my-init [name] [[] {:name name}])
 
 (defn my-getName [this] "MyClass's name")
+
 ;; (import learn_clojure.MyClass)
 (def get-the-name '(.getName (MyClass.)))
 
