@@ -16,7 +16,7 @@
 ;; this function sleeps and delivers a string to the promise, 'p'
 (defn my-slow-function []
   (let [p (promise)]
-    (.start (Thread. ^Runnable (fn [] (Thread/sleep 5000)
+    (.start (Thread. ^Runnable (fn [] (Thread/sleep 2000)
                                  (deliver p "HI THERE!"))))
     p
     ))
@@ -24,9 +24,11 @@
 ;; this function does not block
 (my-slow-function)
 
-;; deref causes promise to block for 5 seconds
+;; deref causes promise to block for 2 seconds
 (deref (my-slow-function))
 
+;; @ is another way to 'deref'
+@(my-slow-function)
 
 
 
