@@ -52,8 +52,8 @@
                 1
                 (+ (fib (- n 1)) (fib (- n 2)))))
 
-(defn fib [n] (if (< n 2)
-                1
-                (+ (fib (- n 1)) (fib (- n 2)))))
+(def fib (memoize fib))
 
-(println (fib 40))
+(time  ( println (fib 44)))
+
+(time  ( println (fib 50)))
