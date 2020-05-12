@@ -55,5 +55,4 @@
 (def fib (memoize fib))
 
 (time  ( println (fib 44)))
-
 (time  ( println (fib 50)))
