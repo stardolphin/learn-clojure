@@ -16,3 +16,16 @@
 ;; => nil
 ;; => 2000
 ;; => 0
+
+
+(def my-agent (agent 0 :validator #(>= % 0) :error-mode :continue))
+(send my-agent inc)
+(println @my-agent)
+(send my-agent inc)
+(println @my-agent)
+(println @my-agent)
+;; takes a call or so to realize the asynchronous call
+;; 1
+;; 1
+;; 2
+;; Loaded
