@@ -26,3 +26,14 @@
 
 (def new-chan (chan))
 (print-listener new-chan)
+
+(defn reverser [in-chan]
+  (let [out-chan (chan)]
+    (go-loop []
+      (>! out-chan (reverse (<! in-chan)))(recur))
+    out-chan))
+
+(def in-chan (chan))
+(def rev-chan (reverser in-chan))
+(print-listener rev-chan)
+(go (>! in-chan [1 2 3]))
