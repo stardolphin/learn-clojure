@@ -37,3 +37,11 @@
 (def rev-chan (reverser in-chan))
 (print-listener rev-chan)
 (go (>! in-chan [1 2 3]))
+
+(defn combine-channels [& chans]
+  (let [out-chan (chan)]
+    (go-loop []
+
+      (recur))
+    )
+  )
