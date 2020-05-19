@@ -1,5 +1,5 @@
 (ns learn-clojure.concurrency-core-async
-  (:require [clojure.core.async :refer [chan go >! <! go-loop]]))
+  (:require [clojure.core.async :refer [chan go >! <! go-loop alts!]]))
 
 ;; chan can take a buffer, a transform, a number implying number of messages
 (def my-chan (chan))
@@ -41,7 +41,16 @@
 (defn combine-channels [& chans]
   (let [out-chan (chan)]
     (go-loop []
-
+      (let [[value c] (alts! chans)] (>! out-chan value))
       (recur))
-    )
+    out-chan)
   )
+(def chan1 (chan))
+(def chan2 (chan))
+
+(def both-chans (combine-channels chan1 chan2))
+
+(print-listener both-chans)
+
+(go (>! chan1 "Hi chan1!"))
+(go (>! chan2 "Hi chan2!"))
