@@ -1,5 +1,6 @@
 (ns learn-clojure.concurrency-core-async
-  (:require [clojure.core.async :refer [chan go >! <! go-loop alts!]]))
+  (:require [clojure.core.async :refer [chan go >! <! go-loop alts!]]
+            [clojure.core.async :as async]))
 
 ;; chan can take a buffer, a transform, a number implying number of messages
 (def my-chan (chan))
@@ -54,3 +55,32 @@
 
 (go (>! chan1 "Hi chan1!"))
 (go (>! chan2 "Hi chan2!"))
+
+;; async map example
+(def in-chan-1 (chan))
+(def  rev-chan-1 (async/map reverse [in-chan-1]))
+(print-listener rev-chan-1)
+(go (>! in-chan-1 [3 2 1]))
+;; prints  (1 2 3)
+
+(def in-chan-2 (chan))
+(def sum-chan (async/reduce + 0 in-chan-2))
+(go (println (<! sum-chan)))
+(go (>! in-chan-2 1))
+(go (>! in-chan-2 2))
+(go (>! in-chan-2 3))
+(println "Not yet....")
+
+;; the reduce is not realized until the input has been closed
+(async/close! in-chan-2)
+
+
+
+
+
+
+
+
+
+
+
