@@ -30,7 +30,7 @@
 (defn reverser [in-chan]
   (let [out-chan (chan)]
     (go-loop []
-      (>! out-chan (reverse (<! in-chan)))(recur))
+      (>! out-chan (reverse (<! in-chan))) (recur))
     out-chan))
 
 (def in-chan (chan))
