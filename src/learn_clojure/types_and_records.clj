@@ -7,7 +7,3 @@
 
 (println (.name (->MyPerson "Haystack")))
 
-
-
-
-
