@@ -1,5 +1,4 @@
-(ns learn-clojure.protocols
-  (:import (com.sun.xml.internal.ws.api.message SuppressAutomaticWSARequestHeadersFeature)))
+(ns learn-clojure.protocols)
 
 ;; like an abstract base class?
 (defprotocol Shape (area [this]) (perimeter [this]))
@@ -22,4 +21,16 @@
   (perimeter [this] (* (.s this) 4)))
 
 (println (area (->Square 8)))
+
+;; protocols can extend existing classes
+(import '[java.util Date Calendar])
+
+(defprotocol RoundableDate (nearest-day [this]))
+
+(extend-protocol RoundableDate
+  Long
+  (nearest-day [this] (- this (mod this 86400000))))
+
+
+
 
