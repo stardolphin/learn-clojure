@@ -1,4 +1,5 @@
-(ns learn-clojure.protocols)
+(ns learn-clojure.protocols
+  (:import (com.sun.xml.internal.ws.api.message SuppressAutomaticWSARequestHeadersFeature)))
 
 ;; like an abstract base class?
 (defprotocol Shape (area [this]) (perimeter [this]))
@@ -13,5 +14,12 @@
 (area (->Circle 5))
 (perimeter (->Circle (* (/ 1 2) (/ 1 (. Math PI)))))
 
+(deftype Square [s])
 
+(extend-protocol Shape
+  Square
+  (area [this] (* (.s this) (.s this)))
+  (perimeter [this] (* (.s this) 4)))
+
+(println (area (->Square 8)))
 
