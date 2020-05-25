@@ -29,8 +29,20 @@
 
 (extend-protocol RoundableDate
   Long
-  (nearest-day [this] (- this (mod this 86400000))))
+  (nearest-day [this] (- this (mod this 86400000)))
 
+  Date
+  (nearest-day [this] (nearest-day (Date. (.getTime this))))
 
+  Calendar
+  (nearest-day [this] (doto this
+                        (.set Calendar/HOUR 0)
+                        (.set Calendar/MINUTE 0)
+                        (.set Calendar/SECOND 0)
+                        (.set Calendar/MILLISECOND 0)
+                        ))
+  )
 
-
+(nearest-day (System/currentTimeMillis))
+(nearest-day (Date.))
+(nearest-day (Calendar/getInstance))
