@@ -1,3 +1,6 @@
 /target
 .nrepl-port
 /.idea
+/forward.out.txt
+/spat.txt
+/spat.txt.out.txt
