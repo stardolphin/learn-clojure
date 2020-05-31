@@ -13,9 +13,14 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Leiningen: clj-tuple:0.1.2" level="project" />
     <orderEntry type="library" name="Leiningen: clojure-complete:0.2.5" level="project" />
+    <orderEntry type="library" name="Leiningen: clojure.jdbc/clojure.jdbc-c3p0:0.3.1" level="project" />
+    <orderEntry type="library" name="Leiningen: clojure.jdbc:0.3.1" level="project" />
     <orderEntry type="library" name="Leiningen: com.github.dblock.waffle/waffle-jna:1.7" level="project" />
     <orderEntry type="library" name="Leiningen: com.google.guava/guava:18.0" level="project" />
+    <orderEntry type="library" name="Leiningen: com.mchange/c3p0:0.9.5-pre9" level="project" />
+    <orderEntry type="library" name="Leiningen: com.mchange/mchange-commons-java:0.2.8" level="project" />
     <orderEntry type="library" name="Leiningen: net.java.dev.jna/jna-platform:4.1.0" level="project" />
     <orderEntry type="library" name="Leiningen: net.java.dev.jna/jna:4.1.0" level="project" />
     <orderEntry type="library" name="Leiningen: nrepl:0.6.0" level="project" />
@@ -26,7 +31,7 @@
     <orderEntry type="library" name="Leiningen: org.clojure/core.specs.alpha:0.2.44" level="project" />
     <orderEntry type="library" name="Leiningen: org.clojure/data.csv:1.0.0" level="project" />
     <orderEntry type="library" name="Leiningen: org.clojure/data.priority-map:0.0.7" level="project" />
-    <orderEntry type="library" name="Leiningen: org.clojure/java.jdbc:0.7.11" level="project" />
+    <orderEntry type="library" name="Leiningen: org.clojure/java.jdbc:0.3.6" level="project" />
     <orderEntry type="library" name="Leiningen: org.clojure/spec.alpha:0.2.176" level="project" />
     <orderEntry type="library" name="Leiningen: org.clojure/tools.analyzer.jvm:1.0.0" level="project" />
     <orderEntry type="library" name="Leiningen: org.clojure/tools.analyzer:1.0.0" level="project" />
@@ -35,5 +40,7 @@
     <orderEntry type="library" name="Leiningen: org.postgresql/postgresql:9.4-1200-jdbc41" level="project" />
     <orderEntry type="library" name="Leiningen: org.slf4j/slf4j-api:1.7.7" level="project" />
     <orderEntry type="library" name="Leiningen: org.slf4j/slf4j-simple:1.7.7" level="project" />
+    <orderEntry type="library" name="Leiningen: potemkin:0.3.4" level="project" />
+    <orderEntry type="library" name="Leiningen: riddley:0.1.6" level="project" />
   </component>
 </module>
