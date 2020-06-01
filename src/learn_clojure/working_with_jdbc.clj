@@ -20,8 +20,7 @@
 ;(db/execute! my-pool
 ;             ["INSERT INTO employees (name, email) VALUES (?,?)"
 ;              "Tucker" "tucker@doggo.bone"])
-(db/insert! my-pool "employees" {:name "Timber" :email "timber@bighouse.com"})
+; (db/insert! my-pool "employees" {:name "Timber" :email "timber@bighouse.com"})
+; (db/insert! my-pool "employees" ["name" "email"] ["Hogie Carmichael" "stardust@song.com"])
 
-(db/insert! my-pool "employees" ["name" "email"] ["Hogie Carmichael" "stardust@song.com"])
-
-
+(db/query my-pool ["SELECT * from employees"])
