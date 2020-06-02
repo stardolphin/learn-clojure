@@ -25,4 +25,11 @@
 ; (db/insert! my-pool "employees" {:name "Timber" :email "timber@bighouse.com"})
 ; (db/insert! my-pool "employees" ["name" "email"] ["Hogie Carmichael" "stardust@song.com"])
 
-(db/query my-pool ["SELECT * from employees"])
+(db/query my-pool ["SELECT * FROM employees WHERE id=? LIMIT 1" 13])
+
+;; With Transaction will only complete if all transactions complete
+(db/with-db-transaction [txn my-pool]
+                        (db/delete! txn "employees" ["id=1"])
+                        (db/delete! txn "employees" ["name=asdfasdf"])
+                        )
+
